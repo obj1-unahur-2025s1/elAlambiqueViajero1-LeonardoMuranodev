@@ -130,3 +130,9 @@ object lasVegas {
         lugarConmemoradoActual = nuevo
     }
 }
+
+object patagonia {
+    method recuerdoTipico() = "Retrato Glaciar Perito Moreno"
+
+    method puedeViajar(movil) = movil.esRapido() and movil.tieneCombustible()
+}
