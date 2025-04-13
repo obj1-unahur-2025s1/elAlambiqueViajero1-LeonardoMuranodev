@@ -19,6 +19,7 @@ object luke {
     }
 }
 
+//---------- Vehiculos ----------
 object alambiqueVeloz {
     var esRapido = true
     var combustible = 20
@@ -26,12 +27,71 @@ object alambiqueVeloz {
 
     method tieneCombustible() = combustible >= consumoPorViaje
     method esRapido() = esRapido
+    method combustible() = combustible
+    method consumoPorViaje() = consumoPorViaje
 
     method consumirCombustible() {
         combustible -= consumoPorViaje
     }
 }
 
+object carabanaGrande {
+    var esRapido = false
+    var combustible = 200
+    var consumoPorViaje = 5
+
+    method tieneCombustible() = combustible >= consumoPorViaje
+    method esRapido() = esRapido
+    method combustible() = combustible
+    method consumoPorViaje() = consumoPorViaje
+
+    method consumirCombustible() {
+        combustible -= consumoPorViaje
+    }
+}
+
+//Toma los valores del vehiculo en el que se convierte
+object superConvertible {
+    var esRapido = vehiculoConvertido.esRapido()
+    var combustible = vehiculoConvertido.combustible()
+    var consumoPorViaje = vehiculoConvertido.consumoPorViaje()
+    var vehiculoConvertido = alambiqueVeloz
+
+    method tieneCombustible() = combustible >= consumoPorViaje
+    method esRapido() = esRapido
+    method combustible() = combustible
+    method consumoPorViaje() = consumoPorViaje
+
+    method consumirCombustible() {
+        combustible -= consumoPorViaje
+    }
+
+    method cambiarVehiculoConvertido(nuevo) {
+        vehiculoConvertido = nuevo
+    }
+}
+
+object antiguallaBlindada {
+    var esRapido = gangster <= 3
+    var combustible = 30
+    var consumoPorViaje = 7 * gangster
+    var gangster = 2
+
+    method tieneCombustible() = combustible >= consumoPorViaje
+    method esRapido() = esRapido
+    method combustible() = combustible
+    method consumoPorViaje() = consumoPorViaje
+
+    method consumirCombustible() {
+        combustible -= consumoPorViaje
+    }
+
+    method cambiarGangster(numero) {
+        gangster += numero
+    }
+}
+
+//---------- Lugares ----------
 object paris {
     method recuerdoTipico() = "llavero de la torre eiffel"
     method puedeViajar(movil) = movil.tieneCombustible()
